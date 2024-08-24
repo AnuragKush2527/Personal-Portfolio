@@ -1,0 +1,19 @@
+* {
+    font-family: "Open Sans", sans-serif;
+    background: #09072a;
+    overflow: hidden;
+}
+
+.outerDiv {
+    position: relative;
+}
+
+.innerDiv {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    color: #6D00FF;
+    background: #020020;
+    height: 100%;
+    width: 86.5vw;
+}
