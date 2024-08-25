@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from "react";
+import Navbar from "./Navbar";
+import About from "./About";
 
 const CanvasComponent = () => {
   const canvasRef = useRef(null);
@@ -119,7 +121,10 @@ const CanvasComponent = () => {
   return (
     <div className="outerDiv">
       <canvas id="canvas1" ref={canvasRef}></canvas>
-      <div className="innerDiv">This is a div overlaying the canvas</div>
+      <div className="innerDiv">
+        <Navbar />
+        <About />
+      </div>
     </div>
   );
 };
