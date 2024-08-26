@@ -1,10 +1,10 @@
 * {
     font-family: "Open Sans", sans-serif;
-    overflow: hidden;
 }
 
 #canvas1 {
     background: #09072a;
+    width: 100%;
 }
 
 .outerDiv {
@@ -23,5 +23,85 @@
 
 .profile-pic {
     /* box-shadow: #6D00FF 0px 5px 15px; */
-    box-shadow: #6D00FF 0px 1px 1px 0px inset, #6D00FF 0px 15px 30px -20px, #6D00FF 0px 10px 50px -30px;
+    /* box-shadow: #6D00FF 0px 1px 1px 0px inset, #6D00FF 0px 15px 30px -20px, #6D00FF 0px 10px 50px -30px; */
+    box-shadow: 2px 2px 15px #6D00FF;
+}
+
+.contact-btn {
+    /* box-shadow: #6D00FF 0px 1px 1px 0px inset, #6D00FF 0px 15px 30px -20px, #6D00FF 0px 10px 50px -30px; */
+    box-shadow: 2px 2px 10px #6D00FF;
+}
+
+
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #091d60;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 350px;
+}
+
+.timeline-item-left {
+    left: 0;
+}
+
+.timeline-item-right {
+    left: 50%;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: #090731;
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    border: 2px solid #091d60;
+    box-shadow: 2px 2px 20px 5px #091d60;
+}
+
+.timeline-item-left .timeline-content {
+    transform: translateX(-60%);
+}
+
+.timeline-item-right .timeline-content {
+    transform: translateX(40%);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 40px;
+    background-color: #6D00FF;
+    border: 4px solid #091d60;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item-right::before {
+    left: -10px;
+}
+
+.headings,
+.brand,
+.navele,
+.check {
+    text-shadow: 2px 2px 20px #6D00FF;
 }
