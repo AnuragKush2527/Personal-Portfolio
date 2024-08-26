@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import Navbar from "./Navbar";
 import About from "./About";
+import Education from "./Education";
+import Skills from "./Skills";
 
 const CanvasComponent = () => {
   const canvasRef = useRef(null);
@@ -9,13 +11,13 @@ const CanvasComponent = () => {
     const ctx = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = 4000;
     const particlesArray = [];
     let count = 0;
 
     window.addEventListener("resize", function () {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.height = 4000;
     });
 
     const mouse = {
@@ -23,18 +25,24 @@ const CanvasComponent = () => {
       y: undefined,
     };
 
+    // canvas.addEventListener("mousemove", function (event) {
+    //   mouse.x = event.x;
+    //   mouse.y = event.y;
+    // });
+
     canvas.addEventListener("mousemove", function (event) {
-      mouse.x = event.x;
-      mouse.y = event.y;
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = event.clientX - rect.left; // Adjust mouse x-coordinate to be relative to canvas
+      mouse.y = event.clientY - rect.top; // Adjust mouse y-coordinate to be relative to canvas
     });
 
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        if (count < 200) {
+        if (count < 500) {
           this.size = Math.random() * 2 + 1;
-        } else if (count < 250) {
+        } else if (count < 1200) {
           this.size = Math.random() * 1 + 1;
         } else {
           this.size = Math.random() * 0 + 0.5;
@@ -67,7 +75,7 @@ const CanvasComponent = () => {
       }
     }
 
-    for (let i = 0; i < 800; i++) {
+    for (let i = 0; i < 2000; i++) {
       particlesArray.push(new Particle());
       count++;
     }
@@ -124,6 +132,8 @@ const CanvasComponent = () => {
       <div className="innerDiv">
         <Navbar />
         <About />
+        <Education />
+        <Skills />
       </div>
     </div>
   );

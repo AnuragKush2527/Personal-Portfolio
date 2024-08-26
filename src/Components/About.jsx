@@ -19,34 +19,34 @@ const About = () => {
           strong foundation in software development, algorithms and data
           structures.
         </p>
-        <button className="bg-[#6D00FF] text-white font-bold ml-0.5 mt-16 py-3 px-8 rounded-2xl hover:bg-[#020020] hover:text-[#6D00FF] hover:outline">
+        <button className="contact-btn bg-[#6D00FF] text-white font-bold ml-0.5 mt-16 py-3 px-8 rounded-2xl hover:bg-[#020020] hover:text-[#6D00FF] hover:outline">
           Let's Talk
         </button>
       </div>
       <div className="w-1/2">
         <img
           className="profile-pic ml-auto mr-4 rounded-2xl border-2 border-[#6D00FF]"
-          src="./public/ProfilePic.jpg"
+          src="ProfilePic.jpg"
           height="300px"
           width="300px"
         ></img>
         <div className="flex mt-8 ml-48">
-          <p className="m-4 ml-9">Check Out My</p>
+          <p className="check m-4 ml-9">Check Out My</p>
           <img
-            className="bg-[#6D00FF] m-4 p-1 rounded-xl"
-            src="./public/linkedin.png"
+            className="cntele bg-[#6D00FF] m-4 p-1 rounded-xl"
+            src="linkedin.png"
             height="30px"
             width="30px"
           ></img>
           <img
-            className="bg-[#6D00FF] m-4 p-1 rounded-xl"
-            src="./public/github.png"
+            className="cntele bg-[#6D00FF] m-4 p-1 rounded-xl"
+            src="github.png"
             height="30px"
             width="30px"
           ></img>
           <img
-            className="bg-[#6D00FF] m-4 p-1 rounded-xl"
-            src="./public/instagram.png"
+            className="cntele bg-[#6D00FF] m-4 p-1 rounded-xl"
+            src="instagram.png"
             height="30px"
             width="30px"
           ></img>
