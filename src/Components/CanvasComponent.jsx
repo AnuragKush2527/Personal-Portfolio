@@ -6,6 +6,35 @@ import Skills from "./Skills";
 
 const CanvasComponent = () => {
   const canvasRef = useRef(null);
+  // useEffect(() => {
+  //   const canvas = canvasRef.current;
+  //   const ctx = canvas.getContext("2d");
+
+  //   canvas.width = window.innerWidth;
+  //   canvas.height = 4000;
+  //   const particlesArray = [];
+  //   let count = 0;
+
+  //   window.addEventListener("resize", function () {
+  //     canvas.width = window.innerWidth;
+  //     canvas.height = 4000;
+  //   });
+
+  //   const mouse = {
+  //     x: undefined,
+  //     y: undefined,
+  //   };
+
+  //   // canvas.addEventListener("mousemove", function (event) {
+  //   //   mouse.x = event.x;
+  //   //   mouse.y = event.y;
+  //   // });
+  //   canvas.addEventListener("mousemove", function (event) {
+  //     const rect = canvas.getBoundingClientRect();
+  //     mouse.x = event.clientX - rect.left; // Adjust mouse x-coordinate to be relative to canvas
+  //     mouse.y = event.clientY - rect.top; // Adjust mouse y-coordinate to be relative to canvas
+  //   });
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -15,34 +44,41 @@ const CanvasComponent = () => {
     const particlesArray = [];
     let count = 0;
 
-    window.addEventListener("resize", function () {
-      canvas.width = window.innerWidth;
-      canvas.height = 4000;
-    });
-
     const mouse = {
       x: undefined,
       y: undefined,
     };
 
-    // canvas.addEventListener("mousemove", function (event) {
-    //   mouse.x = event.x;
-    //   mouse.y = event.y;
-    // });
+    const innerDiv = document.querySelector(".innerDiv");
 
-    canvas.addEventListener("mousemove", function (event) {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = event.clientX - rect.left; // Adjust mouse x-coordinate to be relative to canvas
-      mouse.y = event.clientY - rect.top; // Adjust mouse y-coordinate to be relative to canvas
+    window.addEventListener("resize", function () {
+      canvas.width = window.innerWidth;
+      canvas.height = 4000;
     });
+
+    // Adjust mouse coordinates relative to the canvas and innerDiv
+    const handleMouseMove = (event) => {
+      const rectCanvas = canvas.getBoundingClientRect();
+      mouse.x = event.clientX - rectCanvas.left;
+      mouse.y = event.clientY - rectCanvas.top;
+
+      // Apply the same logic for innerDiv elements
+      const rectInnerDiv = innerDiv.getBoundingClientRect();
+      const mouseXInnerDiv = event.clientX - rectInnerDiv.left;
+      const mouseYInnerDiv = event.clientY - rectInnerDiv.top;
+    };
+
+    // Track mouse movement across the outerDiv
+    const outerDiv = document.querySelector(".outerDiv");
+    outerDiv.addEventListener("mousemove", handleMouseMove);
 
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        if (count < 500) {
+        if (count < 400) {
           this.size = Math.random() * 2 + 1;
-        } else if (count < 1200) {
+        } else if (count < 800) {
           this.size = Math.random() * 1 + 1;
         } else {
           this.size = Math.random() * 0 + 0.5;
@@ -75,7 +111,7 @@ const CanvasComponent = () => {
       }
     }
 
-    for (let i = 0; i < 2000; i++) {
+    for (let i = 0; i < 1800; i++) {
       particlesArray.push(new Particle());
       count++;
     }
@@ -110,7 +146,7 @@ const CanvasComponent = () => {
             ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
             ctx.stroke();
             ctx.closePath();
-            break;
+            // break;
           }
         }
       }
