@@ -40,7 +40,7 @@ const VerticalTimeline = () => {
         >
           <div className="timeline-content text-white p-4">
               <h2 className="p-2 font-bold">{event.course}</h2>
-              <h3 className="p-2 text-[#6D00FF]">{event.college}</h3>
+              <h3 className="p-2 text-sky-500">{event.college}</h3>
               <ul className="list-disc ml-7">
                 <li className="p-2">{event.stream}</li>
                 <li className="p-2">{event.grade}</li>
