@@ -29,16 +29,16 @@ const Navbar = () => {
       </h1>
       <ul className="flex justify-around">
         <li className="navele p-10 pl-28 text-xl text-white active:text-sky-500 hover:text-sky-500">
-          About
+          <a href="#aboutPage">About</a>
         </li>
         <li className="navele p-10 text-xl text-white active:text-sky-500 hover:text-sky-500">
-          Education
+          <a href="#educationPage">Education</a>
         </li>
         <li className="navele p-10 text-xl text-white active:text-sky-500 hover:text-sky-500">
-          Projects
+          <a href="#projectsPage">Projects</a>
         </li>
         <li className="navele p-10 text-xl text-white active:text-sky-500 hover:text-sky-500">
-          Resume
+          <a href="#resumePage">Resume</a>
         </li>
       </ul>
     </div>

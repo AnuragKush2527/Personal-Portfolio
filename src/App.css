@@ -14,12 +14,12 @@
 .innerDiv {
     position: absolute;
     top: 0;
-    left: 100px;
+    /* left: 100px; */
     color: rgb(14 165 233);
     /* background: #020020; */
     background: transparent;
     height: 100%;
-    width: 86.5vw;
+    width: 100%;
 }
 
 .profile-pic {
@@ -117,5 +117,32 @@
 .skill-div {
     margin-left: auto;
     margin-right: auto;
-    max-width: 870px;
+    max-width: 900px;
 }
+
+.project-inside {
+    box-shadow: 2px 2px 8px 2px rgb(14 165 233);
+    border-radius: 10px;
+    width: 300px;
+    background-color: #090731;
+}
+
+.inputs {
+    width: 100%;
+    /* background-color: #090731; */
+    background: transparent;
+    box-shadow: 2px 2px 4px 1px rgb(14 165 233);
+}
+
+.custom-placeholder::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.navele2 {
+    text-shadow: 1px 1px 10px rgb(14 165 233);
+}
+
+/* .footer-div {
+    box-shadow: 1px 1px 4px 5px rgb(14 165 233);
+} */

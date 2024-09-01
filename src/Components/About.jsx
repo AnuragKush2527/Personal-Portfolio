@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="flex justify-around p-32">
+    <div className="flex justify-around p-32 pb-20 mx-12" id="aboutPage">
       <div className="w-1/2">
         <h3 className="pt-0 text-2xl text-white">
           Hello, <span className="text-sky-500">I'm</span>
@@ -20,7 +20,7 @@ const About = () => {
           structures.
         </p>
         <button className="contact-btn bg-sky-500 text-white font-bold ml-0.5 mt-16 py-3 px-8 rounded-2xl hover:bg-[#020020] hover:text-sky-500 hover:outline">
-          Let's Talk
+          <a href="#contactPage">Let's Talk</a>
         </button>
       </div>
       <div className="w-1/2">
@@ -30,26 +30,35 @@ const About = () => {
           height="300px"
           width="300px"
         ></img>
-        <div className="flex mt-8 ml-48">
-          <p className="check m-4 ml-9 text-sky-500">Check Out My</p>
-          <img
-            className="cntele bg-sky-500 m-4 p-1 rounded-xl"
-            src="linkedin.png"
-            height="30px"
-            width="30px"
-          ></img>
-          <img
-            className="cntele bg-sky-500 m-4 p-1 rounded-xl"
-            src="github.png"
-            height="30px"
-            width="30px"
-          ></img>
-          <img
-            className="cntele bg-sky-500 m-4 p-1 rounded-xl"
-            src="instagram.png"
-            height="30px"
-            width="30px"
-          ></img>
+        <div className="flex mt-4 ml-60">
+          <p className="check m-4 ml-9 mt-6 text-sky-500">Check Out My</p>
+          <a
+            href="https://www.linkedin.com/in/anurag-kushwaha-463796228/"
+            target="_blank"
+          >
+            <img
+              className="cntele bg-sky-600 m-4 p-1 rounded-xl"
+              src="linkedin.svg"
+              height="30px"
+              width="30px"
+            ></img>
+          </a>
+          <a href="https://github.com/AnuragKush2527/" target="_blank">
+            <img
+              className="cntele bg-sky-600 m-4 p-1 rounded-xl"
+              src="github.svg"
+              height="30px"
+              width="30px"
+            />
+          </a>
+          <a href="mailto:akush2503@gmail.com">
+            <img
+              className="cntele bg-sky-600 m-4 p-1 rounded-xl"
+              src="gmail.svg"
+              height="30px"
+              width="30px"
+            ></img>
+          </a>
         </div>
       </div>
     </div>

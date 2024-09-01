@@ -3,6 +3,9 @@ import Navbar from "./Navbar";
 import About from "./About";
 import Education from "./Education";
 import Skills from "./Skills";
+import Projects from "./Projects";
+import Contact from "./Contact";
+import Footer from "./Footer";
 
 const CanvasComponent = () => {
   const canvasRef = useRef(null);
@@ -40,7 +43,7 @@ const CanvasComponent = () => {
     const ctx = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
-    canvas.height = 4000;
+    canvas.height = 4997;
     const particlesArray = [];
     let count = 0;
 
@@ -53,7 +56,7 @@ const CanvasComponent = () => {
 
     window.addEventListener("resize", function () {
       canvas.width = window.innerWidth;
-      canvas.height = 4000;
+      canvas.height = 4997;
     });
 
     // Adjust mouse coordinates relative to the canvas and innerDiv
@@ -170,6 +173,9 @@ const CanvasComponent = () => {
         <About />
         <Education />
         <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
       </div>
     </div>
   );

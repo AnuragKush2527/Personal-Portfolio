@@ -78,6 +78,18 @@ const Skills = () => {
           width="70px"
           height="70px"
         ></img>
+        <img
+          className="skill-img border-sky-500 rounded-xl"
+          src="numpy.svg"
+          width="70px"
+          height="70px"
+        ></img>
+        <img
+          className="skill-img border-sky-500 rounded-xl"
+          src="tensorflow.svg"
+          width="70px"
+          height="70px"
+        ></img>
       </div>
     </>
   );
