@@ -5,7 +5,7 @@ import VerticalTimeline from "./VerticalTimeline";
 const Education = () => {
   return (
     <>
-      <Heading heading="Education" />
+      <Heading heading="Education" ids="educationPage"/>
       <VerticalTimeline />
     </>
   );
