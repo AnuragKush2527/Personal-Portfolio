@@ -2,24 +2,26 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="footer-div text-white flex justify-center mt-32 pt-10 backdrop-blur-sm border-t-4 border-sky-500">
+    <div className="footer-div text-white flex justify-center pt-10 backdrop-blur-sm border-t-4 border-sky-500">
       <div>
         <p className="flex justify-center">
           &copy; 2024 <span className="text-sky-500 ml-1">Anurag Kushwaha</span>
           . All rights reserved.
         </p>
         <ul className="flex justify-around text-xl">
-          <li className="navele2 p-8 hover:text-sky-500">
+          <li className="navele2 p-4 md:p-8 hover:text-sky-500">
             <a href="#aboutPage">About</a>
           </li>
-          <li className="navele2 p-8 hover:text-sky-500">
+          <li className="navele2 p-4 md:p-8 hover:text-sky-500">
             <a href="#educationPage">Education</a>
           </li>
-          <li className="navele2 p-8 hover:text-sky-500">
+          <li className="navele2 p-4 md:p-8 hover:text-sky-500">
             <a href="#projectsPage">Projects</a>
           </li>
-          <li className="navele2 p-8 hover:text-sky-500">
-            <a href="#resumePage">Resume</a>
+          <li className="navele2 p-4 md:p-8 hover:text-sky-500">
+            <a href="/Resume.pdf" target="_blank">
+              Resume
+            </a>
           </li>
         </ul>
         <div className="flex justify-center">
