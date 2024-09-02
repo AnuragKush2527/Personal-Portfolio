@@ -43,7 +43,17 @@ const CanvasComponent = () => {
     const ctx = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
-    canvas.height = 4997;
+    if (canvas.width >= 856) {
+      canvas.height = 5000;
+    } else if (canvas.width >= 700) {
+      canvas.height = 6200;
+    } else if (canvas.width >= 560) {
+      canvas.height = 6800;
+    } else if (canvas.width >= 500) {
+      canvas.height = 7000;
+    } else {
+      canvas.height = 7800;
+    }
     const particlesArray = [];
     let count = 0;
 
@@ -56,7 +66,17 @@ const CanvasComponent = () => {
 
     window.addEventListener("resize", function () {
       canvas.width = window.innerWidth;
-      canvas.height = 4997;
+      if (canvas.width >= 856) {
+        canvas.height = 5000;
+      } else if (canvas.width >= 700) {
+        canvas.height = 6200;
+      } else if (canvas.width >= 560) {
+        canvas.height = 6800;
+      } else if (canvas.width >= 500) {
+        canvas.height = 7000;
+      } else {
+        canvas.height = 7800;
+      }
     });
 
     // Adjust mouse coordinates relative to the canvas and innerDiv
@@ -81,7 +101,7 @@ const CanvasComponent = () => {
         this.y = Math.random() * canvas.height;
         if (count < 400) {
           this.size = Math.random() * 2 + 1;
-        } else if (count < 800) {
+        } else if (count < 900) {
           this.size = Math.random() * 1 + 1;
         } else {
           this.size = Math.random() * 0 + 0.5;
@@ -114,7 +134,7 @@ const CanvasComponent = () => {
       }
     }
 
-    for (let i = 0; i < 1800; i++) {
+    for (let i = 0; i < 2200; i++) {
       particlesArray.push(new Particle());
       count++;
     }
