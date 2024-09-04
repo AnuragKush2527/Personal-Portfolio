@@ -69,7 +69,7 @@ const CanvasComponent = () => {
       if (canvas.width >= 856) {
         canvas.height = 5000;
       } else if (canvas.width >= 700) {
-        canvas.height = 6200;
+        canvas.height = 6000;
       } else if (canvas.width >= 560) {
         canvas.height = 6800;
       } else if (canvas.width >= 500) {
@@ -85,10 +85,16 @@ const CanvasComponent = () => {
       mouse.x = event.clientX - rectCanvas.left;
       mouse.y = event.clientY - rectCanvas.top;
 
+      if (canvas.height > 6500) {
+        if (mouse.y > 5000) mouse.y += 200;
+        else if (mouse.y > 4000) mouse.y += 150;
+        else if (mouse.y > 3000) mouse.y += 100;
+      }
+
       // Apply the same logic for innerDiv elements
-      const rectInnerDiv = innerDiv.getBoundingClientRect();
-      const mouseXInnerDiv = event.clientX - rectInnerDiv.left;
-      const mouseYInnerDiv = event.clientY - rectInnerDiv.top;
+      // const rectInnerDiv = innerDiv.getBoundingClientRect();
+      // const mouseXInnerDiv = event.clientX - rectInnerDiv.left;
+      // const mouseYInnerDiv = event.clientY - rectInnerDiv.top;
     };
 
     // Track mouse movement across the outerDiv
@@ -101,7 +107,7 @@ const CanvasComponent = () => {
         this.y = Math.random() * canvas.height;
         if (count < 400) {
           this.size = Math.random() * 2 + 1;
-        } else if (count < 900) {
+        } else if (count < 800) {
           this.size = Math.random() * 1 + 1;
         } else {
           this.size = Math.random() * 0 + 0.5;
@@ -134,7 +140,13 @@ const CanvasComponent = () => {
       }
     }
 
-    for (let i = 0; i < 2200; i++) {
+    let numberOfParticles;
+    if (canvas.width > 800) {
+      numberOfParticles = 2200;
+    } else {
+      numberOfParticles = 1500;
+    }
+    for (let i = 0; i < numberOfParticles; i++) {
       particlesArray.push(new Particle());
       count++;
     }

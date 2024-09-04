@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const VerticalTimeline = () => {
   const events = [
@@ -31,14 +31,46 @@ const VerticalTimeline = () => {
     },
   ];
 
+  const [visibleIds, setVisibleIds] = useState([]);
+
+  const educationRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleIds((prev) => [...prev, entry.target.id]);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    educationRefs.current.forEach((ref) => observer.observe(ref));
+
+    return () => {
+      educationRefs.current.forEach((ref) => observer.unobserve(ref));
+    };
+  }, []);
+
   return (
-    <div className="timeline">
+    <div className={`timeline`}>
       {events.map((event, index) => (
         <div
           key={event.id}
           className={`timeline-item timeline-item-${event.side} time-cont-${event.id}`}
         >
-          <div className="timeline-content text-white p-4">
+          <div 
+          id={`project-${event.id}`}
+          ref={(el) => (educationRefs.current[index] = el)}
+           className={`timeline-content text-white p-4 transform transition duration-700 ${
+                visibleIds.includes(`project-${event.id}`)
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-20"
+              }`}>
             <h2 className="p-2 font-bold">{event.course}</h2>
             <h3 className="p-2 text-sky-500">{event.college}</h3>
             <ul className="list-disc ml-7">

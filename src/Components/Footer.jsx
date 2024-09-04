@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Footer = () => {
+  const [isLoaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 50);
+  }, []);
+
   return (
-    <div className="footer-div text-white flex justify-center pt-10 backdrop-blur-sm border-t-4 border-sky-500">
+    <div
+      className={`footer-div text-white flex justify-center pt-10 backdrop-blur-sm border-t-4 border-sky-500 ${
+        isLoaded ? "absolute bottom-0 left-0 w-full" : ""
+      }`}
+    >
       <div>
         <p className="flex justify-center">
           &copy; 2024 <span className="text-sky-500 ml-1">Anurag Kushwaha</span>
@@ -30,7 +42,7 @@ const Footer = () => {
             target="_blank"
           >
             <img
-              className="cntele bg-sky-600 m-4 p-1 rounded-xl"
+              className="cntele bg-sky-600 m-4 p-1 rounded-xl hover:bg-white"
               src="linkedin.svg"
               height="30px"
               width="30px"
@@ -38,16 +50,16 @@ const Footer = () => {
           </a>
           <a href="https://github.com/AnuragKush2527/" target="_blank">
             <img
-              className="cntele bg-sky-600 m-4 p-1 rounded-xl"
+              className="cntele bg-sky-600 m-4 p-1 rounded-xl hover:bg-white"
               src="github.svg"
               height="30px"
               width="30px"
             />
           </a>
-          <a href="mailto:akush2503@gmail.com">
+          <a href="https://www.instagram.com/anurag_kush2503/" target="_blank">
             <img
-              className="cntele bg-sky-600 m-4 p-1 rounded-xl"
-              src="gmail.svg"
+              className="cntele bg-sky-600 m-4 p-1 rounded-xl hover:bg-white"
+              src="instagram.svg"
               height="30px"
               width="30px"
             ></img>

@@ -13,7 +13,7 @@ const Skills = () => {
           height="70px"
         ></img>
         <img
-          className="skill-img border-sky-500 rounded-xl"
+          className="skill-img2 border-sky-500 rounded-xl"
           src="python.svg"
           width="70px"
           height="70px"
@@ -25,7 +25,7 @@ const Skills = () => {
           height="70px"
         ></img>
         <img
-          className="skill-img border-sky-500 rounded-xl"
+          className="skill-img2 border-sky-500 rounded-xl"
           src="nodejs.svg"
           width="70px"
           height="70px"
@@ -37,7 +37,7 @@ const Skills = () => {
           height="70px"
         ></img>
         <img
-          className="skill-img border-sky-500 rounded-xl"
+          className="skill-img2 border-sky-500 rounded-xl"
           src="tailwindcss.svg"
           width="70px"
           height="70px"
@@ -49,7 +49,7 @@ const Skills = () => {
           height="70px"
         ></img>
         <img
-          className="skill-img border-sky-500 rounded-xl"
+          className="skill-img2 border-sky-500 rounded-xl"
           src="database.svg"
           width="70px"
           height="70px"
@@ -61,7 +61,7 @@ const Skills = () => {
           height="70px"
         ></img>
         <img
-          className="skill-img border-sky-500 rounded-xl"
+          className="skill-img2 border-sky-500 rounded-xl"
           src="html.svg"
           width="70px"
           height="70px"
@@ -73,7 +73,7 @@ const Skills = () => {
           height="70px"
         ></img>
         <img
-          className="skill-img border-sky-500 rounded-xl"
+          className="skill-img2 border-sky-500 rounded-xl"
           src="figma.svg"
           width="70px"
           height="70px"
@@ -85,7 +85,7 @@ const Skills = () => {
           height="70px"
         ></img>
         <img
-          className="skill-img border-sky-500 rounded-xl"
+          className="skill-img2 border-sky-500 rounded-xl"
           src="tensorflow.svg"
           width="70px"
           height="70px"

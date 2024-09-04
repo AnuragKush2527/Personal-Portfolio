@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Heading from "./Heading";
 
 const Projects = () => {
@@ -11,8 +11,16 @@ const Projects = () => {
         "Developed a full-stack social media web application featuring real-time chat functionality using ReactJs, NodeJs, SocketIO.",
       description2:
         "Implemented sentiment analysis in chat conversations to assess user sentiment, leveraging Natural Language Processing (NLP) libraries, TensorFlow, etc.",
-      tech: "Python Flask React Mongodb Socket.io NLTK Tensorflow",
-      link: "https://github.com/AnuragKush2527/The-Noble-Artist-Business-Website.git",
+      tech: [
+        "Python",
+        "Flask",
+        "React",
+        "Mongodb",
+        "Socket.io",
+        "NLTK",
+        "Tensorflow",
+      ],
+      link: "https://github.com/AnuragKush2527/Major-Project---VibeSync.git",
     },
     {
       id: 2,
@@ -22,7 +30,7 @@ const Projects = () => {
         "Developed and designed a personal portfolio website to showcase professional projects, skills, and accomplishments.",
       description2:
         "The site features a responsive design, ensuring optimal viewing across devices.",
-      tech: "ReactJs TailwindCSS Framer Motion Javascript",
+      tech: ["ReactJs", "TailwindCSS", "Javascript"],
       link: "https://github.com/AnuragKush2527/Personal-Portfolio.git",
     },
     {
@@ -33,7 +41,7 @@ const Projects = () => {
         "Designed and developed a visually appealing website for a small business.",
       description2:
         "Created a user-friendly interface with a focus on clear navigation, enhancing customer engagement and user experience.",
-      tech: "HTML CSS JavaScript Bootstrap",
+      tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://github.com/AnuragKush2527/The-Noble-Artist-Business-Website.git",
     },
     {
@@ -44,21 +52,52 @@ const Projects = () => {
         "Developed a responsive and user-friendly to-do list application using NodeJs, ExpressJs, Mongodb. Integrated database (MongoDB) for persistent data management, ensuring tasks are saved across sessions.",
       description2:
         "Implemented dynamic routing using Express to manage several lists at the same time.",
-      tech: "Mongodb NodeJs ExpressJs ReactJs Bootstrap",
+      tech: ["Mongodb", "NodeJs", "ExpressJs", "ReactJs", "BootStrap"],
       link: "https://github.com/AnuragKush2527/toDoList.git",
     },
   ];
+
+  const [visibleIds, setVisibleIds] = useState([]);
+
+  const projectRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleIds((prev) => [...prev, entry.target.id]);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    projectRefs.current.forEach((ref) => observer.observe(ref));
+
+    return () => {
+      projectRefs.current.forEach((ref) => observer.unobserve(ref));
+    };
+  }, []);
 
   return (
     <>
       <Heading heading="Projects" ids="projectsPage" />
       <div className="projects-div flex flex-wrap justify-center">
         {projects.map((project, index) => (
-          <a href={project.link}>
-            <div
-              key={project.id}
-              className="project-inside text-white m-16 text-xs p-1"
-            >
+          <div
+            key={project.id}
+            id={`project-${project.id}`}
+            ref={(el) => (projectRefs.current[index] = el)}
+            className={`project-inside text-white m-16 text-xs px-1 pb-2 transform transition duration-700 mt-4 md:mt-16 ${
+              visibleIds.includes(`project-${project.id}`)
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            <div className="project-content">
               <img
                 className="my-6 ml-12"
                 src={project.img}
@@ -75,12 +114,28 @@ const Projects = () => {
                 <li>
                   <p className="px-4 py-2">{project.description2}</p>
                 </li>
-                <li>
-                  <p className="px-4 py-2">{project.tech}</p>
-                </li>
               </ul>
+              <div className="flex flex-wrap px-12">
+                {project.tech.map((tech, idx) => (
+                  <p
+                    key={idx}
+                    className="p-1 m-1 tech-p bg-[#17244d] rounded-lg text-sky-500"
+                  >
+                    {tech}
+                  </p>
+                ))}
+              </div>
             </div>
-          </a>
+            <div className="project-link">
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <button
+                  className={`contact-btn bg-sky-400 text-white font-bold ml-0.5 mt-0 py-3 px-8 rounded-lg hover:bg-[#020020] hover:text-sky-400 hover:outline`}
+                >
+                  Explore GitHub
+                </button>
+              </a>
+            </div>
+          </div>
         ))}
       </div>
     </>
