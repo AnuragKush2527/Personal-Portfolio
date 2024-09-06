@@ -87,59 +87,55 @@ const Projects = () => {
       <Heading heading="Projects" ids="projectsPage" />
       <div className="projects-div flex flex-wrap justify-center">
         {projects.map((project, index) => (
-            <div
-              key={project.id}
-              id={`project-${project.id}`}
-              ref={(el) => (projectRefs.current[index] = el)}
-              className={`project-inside text-white m-16 text-xs px-1 pb-2 transform transition duration-700 mt-4 md:mt-16 ${
-                visibleIds.includes(`project-${project.id}`)
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
-            >
-              <div className="project-content">
-                <img
-                  className="my-6 ml-12"
-                  src={project.img}
-                  height="200px"
-                  width="200px"
-                ></img>
-                <h1 className="px-4 pb-2 text-xl flex justify-center text-sky-500">
-                  {project.name}
-                </h1>
-                <ul className="list-disc px-8">
-                  <li>
-                    <p className="px-4 py-2">{project.description1}</p>
-                  </li>
-                  <li>
-                    <p className="px-4 py-2">{project.description2}</p>
-                  </li>
-                </ul>
-                <div className="flex flex-wrap px-12">
-                  {project.tech.map((tech, idx) => (
-                    <p
-                      key={idx}
-                      className="p-1 m-1 tech-p bg-[#17244d] rounded-lg text-sky-500"
-                    >
-                      {tech}
-                    </p>
-                  ))}
-                </div>
-              </div>
-              <div className="project-link">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button
-                    className={`contact-btn bg-sky-400 text-white font-bold ml-0.5 mt-0 py-3 px-8 rounded-lg hover:bg-[#020020] hover:text-sky-400 hover:outline`}
+          <div
+            key={project.id}
+            id={`project-${project.id}`}
+            ref={(el) => (projectRefs.current[index] = el)}
+            className={`project-inside text-white m-16 text-xs px-1 pb-2 transform transition duration-700 mt-4 md:mt-16 ${
+              visibleIds.includes(`project-${project.id}`)
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            <div className="project-content">
+              <img
+                className="my-6 ml-12"
+                src={project.img}
+                height="200px"
+                width="200px"
+              ></img>
+              <h1 className="px-4 pb-2 text-xl flex justify-center text-sky-500">
+                {project.name}
+              </h1>
+              <ul className="list-disc px-8">
+                <li>
+                  <p className="px-4 py-2">{project.description1}</p>
+                </li>
+                <li>
+                  <p className="px-4 py-2">{project.description2}</p>
+                </li>
+              </ul>
+              <div className="flex flex-wrap px-12">
+                {project.tech.map((tech, idx) => (
+                  <p
+                    key={idx}
+                    className="p-1 m-1 tech-p bg-[#17244d] rounded-lg text-sky-500"
                   >
-                    Explore GitHub
-                  </button>
-                </a>
+                    {tech}
+                  </p>
+                ))}
               </div>
             </div>
+            <div className="project-link">
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <button
+                  className={`contact-btn bg-sky-400 text-white font-bold ml-0.5 mt-0 py-3 px-8 rounded-lg hover:bg-[#020020] hover:text-sky-400 hover:outline`}
+                >
+                  Explore GitHub
+                </button>
+              </a>
+            </div>
+          </div>
         ))}
       </div>
     </>
