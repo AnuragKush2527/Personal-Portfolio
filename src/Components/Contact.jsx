@@ -43,7 +43,7 @@ const Contact = () => {
 
   const handleShowAlert = () => {
     setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 3000); // Auto close after 3 seconds
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   const sendEmailToast = (e) => {

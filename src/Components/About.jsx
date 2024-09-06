@@ -51,11 +51,11 @@ const About = () => {
 
   return (
     <div
-      className="flex flex-col-reverse mx-20 md:flex-row md:justify-around md:mx-0 md:px-14 md:p-2 md:pt-20 lg:pt-24 pb-20 lg:px-44"
+      className="flex flex-col-reverse mx-20 md:flex-row md:justify-around md:mx-0 md:px-10 md:p-2 md:pt-20 lg:pt-24 pb-20 lg:px-44 lg:pl-14 xl:pl-44"
       id="aboutPage"
     >
       <div
-        className={`md:w-1/2 flex flex-col items-center md:flex-none md:items-start`}
+        className={`md:w-1/2 flex flex-col items-center md:flex-none md:items-start lg:w-3/5`}
       >
         <h3
           className={`pt-0 text-2xl text-white transition-transform duration-700 ease-in-out ${
@@ -65,7 +65,7 @@ const About = () => {
           Hello, <span className="text-sky-500">I'm</span>
         </h3>
         <h1
-          className={`pt-6 pb-2 text-3xl md:text-5xl font-medium text-sky-1000 transition-transform duration-700 ease-in-out ${
+          className={`pt-6 pb-2 text-2xl sm:text-5xl font-medium text-sky-1000 transition-transform duration-700 ease-in-out ${
             isLoaded2 ? "transform translate-y-0" : "transform translate-y-16"
           }`}
         >
@@ -78,7 +78,7 @@ const About = () => {
         >
           I am a{" "}
           <span
-            className={`text-2xl text-cyan-300 fade-in ${
+            className={`text-xl sm:text-2xl text-cyan-300 fade-in ${
               textVisible ? "fade-in-visible" : ""
             }`}
           >
@@ -114,7 +114,7 @@ const About = () => {
           height="300px"
           width="260px"
         ></img>
-        <div className="flex mt-16 md:mt-12 md:ml-20 lg:mt-2 lg:ml-60">
+        <div className="flex mt-16 md:mt-12 md:ml-20 lg:mt-2 lg:ml-36">
           <p className="check m-2 mt-4 ml-0 md:ml-4 md:mt-5 text-sky-500">
             Check my
           </p>

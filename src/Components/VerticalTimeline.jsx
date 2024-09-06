@@ -63,14 +63,15 @@ const VerticalTimeline = () => {
           key={event.id}
           className={`timeline-item timeline-item-${event.side} time-cont-${event.id}`}
         >
-          <div 
-          id={`project-${event.id}`}
-          ref={(el) => (educationRefs.current[index] = el)}
-           className={`timeline-content text-white p-4 transform transition duration-700 ${
-                visibleIds.includes(`project-${event.id}`)
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-20"
-              }`}>
+          <div
+            id={`project-${event.id}`}
+            ref={(el) => (educationRefs.current[index] = el)}
+            className={`timeline-content text-white p-4 transform transition duration-700 ${
+              visibleIds.includes(`project-${event.id}`)
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-20"
+            }`}
+          >
             <h2 className="p-2 font-bold">{event.course}</h2>
             <h3 className="p-2 text-sky-500">{event.college}</h3>
             <ul className="list-disc ml-7">

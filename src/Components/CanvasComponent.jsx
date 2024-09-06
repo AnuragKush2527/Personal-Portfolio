@@ -9,51 +9,31 @@ import Footer from "./Footer";
 
 const CanvasComponent = () => {
   const canvasRef = useRef(null);
-  // useEffect(() => {
-  //   const canvas = canvasRef.current;
-  //   const ctx = canvas.getContext("2d");
-
-  //   canvas.width = window.innerWidth;
-  //   canvas.height = 4000;
-  //   const particlesArray = [];
-  //   let count = 0;
-
-  //   window.addEventListener("resize", function () {
-  //     canvas.width = window.innerWidth;
-  //     canvas.height = 4000;
-  //   });
-
-  //   const mouse = {
-  //     x: undefined,
-  //     y: undefined,
-  //   };
-
-  //   // canvas.addEventListener("mousemove", function (event) {
-  //   //   mouse.x = event.x;
-  //   //   mouse.y = event.y;
-  //   // });
-  //   canvas.addEventListener("mousemove", function (event) {
-  //     const rect = canvas.getBoundingClientRect();
-  //     mouse.x = event.clientX - rect.left; // Adjust mouse x-coordinate to be relative to canvas
-  //     mouse.y = event.clientY - rect.top; // Adjust mouse y-coordinate to be relative to canvas
-  //   });
-
+ 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
-    if (canvas.width >= 856) {
+    if(canvas.width > 1200) {
       canvas.height = 5000;
-    } else if (canvas.width >= 700) {
-      canvas.height = 6200;
-    } else if (canvas.width >= 560) {
-      canvas.height = 6800;
-    } else if (canvas.width >= 500) {
-      canvas.height = 7000;
-    } else {
-      canvas.height = 7800;
     }
+    else if (canvas.width > 1000) {
+      canvas.height = 5200;
+    } else if (canvas.width > 900) {
+      canvas.height = 5200;
+    } else if (canvas.width > 800) {
+      canvas.height = 6500;
+    } else if (canvas.width > 700) {
+      canvas.height = 6500;
+    } else if (canvas.width > 500) {
+      canvas.height = 6800;
+    } else if (canvas.width > 400) {
+      canvas.height = 7200;
+    } else {
+      canvas.height = 5500;
+    }
+    
     const particlesArray = [];
     let count = 0;
 
@@ -66,20 +46,27 @@ const CanvasComponent = () => {
 
     window.addEventListener("resize", function () {
       canvas.width = window.innerWidth;
-      if (canvas.width >= 856) {
+
+      if(canvas.width > 1200) {
         canvas.height = 5000;
-      } else if (canvas.width >= 700) {
-        canvas.height = 6000;
-      } else if (canvas.width >= 560) {
+      }
+      else if (canvas.width > 1000) {
+        canvas.height = 5200;
+      } else if (canvas.width > 900) {
+        canvas.height = 5200;
+      } else if (canvas.width > 800) {
+        canvas.height = 6500;
+      } else if (canvas.width > 700) {
+        canvas.height = 6500;
+      } else if (canvas.width > 500) {
         canvas.height = 6800;
-      } else if (canvas.width >= 500) {
-        canvas.height = 7000;
+      } else if (canvas.width > 400) {
+        canvas.height = 7200;
       } else {
-        canvas.height = 7800;
+        canvas.height = 5500;
       }
     });
 
-    // Adjust mouse coordinates relative to the canvas and innerDiv
     const handleMouseMove = (event) => {
       const rectCanvas = canvas.getBoundingClientRect();
       mouse.x = event.clientX - rectCanvas.left;
@@ -90,14 +77,8 @@ const CanvasComponent = () => {
         else if (mouse.y > 4000) mouse.y += 150;
         else if (mouse.y > 3000) mouse.y += 100;
       }
-
-      // Apply the same logic for innerDiv elements
-      // const rectInnerDiv = innerDiv.getBoundingClientRect();
-      // const mouseXInnerDiv = event.clientX - rectInnerDiv.left;
-      // const mouseYInnerDiv = event.clientY - rectInnerDiv.top;
     };
 
-    // Track mouse movement across the outerDiv
     const outerDiv = document.querySelector(".outerDiv");
     outerDiv.addEventListener("mousemove", handleMouseMove);
 
