@@ -46,13 +46,19 @@ const CanvasComponent = () => {
     if (canvas.width >= 856) {
       canvas.height = 5000;
     } else if (canvas.width >= 700) {
-      canvas.height = 6200;
-    } else if (canvas.width >= 560) {
+      canvas.height = 6500;
+    } else if (canvas.width >= 640) {
+      canvas.height = 6600;
+    } else if (canvas.width >= 520) {
       canvas.height = 6800;
-    } else if (canvas.width >= 500) {
+    } else if (canvas.width >= 480) {
+      canvas.height = 7100;
+    } else if (canvas.width >= 380) {
       canvas.height = 7000;
+    } else if (canvas.width >= 350) {
+      canvas.height = 7200;
     } else {
-      canvas.height = 7800;
+      canvas.height = 7500;
     }
     const particlesArray = [];
     let count = 0;
@@ -69,13 +75,19 @@ const CanvasComponent = () => {
       if (canvas.width >= 856) {
         canvas.height = 5000;
       } else if (canvas.width >= 700) {
-        canvas.height = 6000;
-      } else if (canvas.width >= 560) {
+        canvas.height = 6500;
+      } else if (canvas.width >= 640) {
+        canvas.height = 6600;
+      } else if (canvas.width >= 520) {
         canvas.height = 6800;
-      } else if (canvas.width >= 500) {
+      } else if (canvas.width >= 480) {
+        canvas.height = 7100;
+      } else if (canvas.width >= 380) {
         canvas.height = 7000;
+      } else if (canvas.width >= 350) {
+        canvas.height = 7200;
       } else {
-        canvas.height = 7800;
+        canvas.height = 7500;
       }
     });
 
@@ -85,11 +97,11 @@ const CanvasComponent = () => {
       mouse.x = event.clientX - rectCanvas.left;
       mouse.y = event.clientY - rectCanvas.top;
 
-      if (canvas.height > 6500) {
-        if (mouse.y > 5000) mouse.y += 200;
-        else if (mouse.y > 4000) mouse.y += 150;
-        else if (mouse.y > 3000) mouse.y += 100;
-      }
+      // if (canvas.height > 6500) {
+      //   if (mouse.y > 5000) mouse.y += 200;
+      //   else if (mouse.y > 4000) mouse.y += 150;
+      //   else if (mouse.y > 3000) mouse.y += 100;
+      // }
 
       // Apply the same logic for innerDiv elements
       // const rectInnerDiv = innerDiv.getBoundingClientRect();
