@@ -51,11 +51,11 @@ const About = () => {
 
   return (
     <div
-      className="flex flex-col-reverse mx-20 md:flex-row md:justify-around md:mx-0 md:px-14 md:p-2 md:pt-20 lg:pt-24 pb-20 lg:px-44"
+      className="flex flex-col-reverse md:flex-row md:justify-around mx-12 md:mx-0 md:px-6 md:p-2 md:pt-20 lg:pt-24 pb-20 lg:px-24 xl:px-40"
       id="aboutPage"
     >
       <div
-        className={`md:w-1/2 flex flex-col items-center md:flex-none md:items-start`}
+        className={`md:w-1/2 flex flex-col flex-wrap items-center md:flex-none md:items-start`}
       >
         <h3
           className={`pt-0 text-2xl text-white transition-transform duration-700 ease-in-out ${
@@ -86,7 +86,7 @@ const About = () => {
           </span>
         </h3>
         <p
-          className={`pt-12 text-white tracking-wide transition-transform duration-700 ease-in-out ${
+          className={`pt-12 text-white tracking-wide text-justify transition-transform duration-700 ease-in-out ${
             isLoaded4 ? "transform translate-y-0" : "transform translate-y-16"
           }`}
         >
@@ -104,12 +104,12 @@ const About = () => {
         </button>
       </div>
       <div
-        className={`flex flex-col items-center d:w-1/2 mb-20 mt-12 pr-6 md:mt-0 md:mb-0 transition-transform duration-1000 ease-out ${
+        className={`flex flex-col items-center d:w-1/2 mb-20 mt-12 sm:pr-6 md:mt-0 md:mb-0 transition-transform duration-1000 ease-out ${
           isLoaded4 ? "transform translate-y-0" : "transform translate-y-16"
         }`}
       >
         <img
-          className="profile-pic md:ml-auto md:mr-4 rounded-2xl border-0 border-sky-500 brightness-90"
+          className="profile-pic md:ml-auto lg:mr-4 mr-0 rounded-2xl border-0 border-sky-500 brightness-90"
           src="ProfilePic3.jpg"
           height="300px"
           width="260px"

@@ -54,32 +54,32 @@ const Contact = () => {
   return (
     <>
       <Heading heading="Contact" ids="contactPage" />
-      <div className="flex justify-center text-white mt-[-50px] md:mt-0 ">
-        <div className="contact-div flex justify-center w-80 md:w-1/3">
-          <form ref={form} onSubmit={sendEmailToast}>
+      <div className="flex justify-center text-white mt-[-50px] md:mt-0">
+        <div className="contact-div flex justify-center w-60 md:w-1/3">
+          <form ref={form} onSubmit={sendEmailToast} className="">
             <input
-              className="inputs my-4 p-2 w-80 md:w-full rounded-lg custom-placeholder"
+              className="inputs my-4 p-2 rounded-lg custom-placeholder w-full box-border"
               type="email"
               name="user_email"
               placeholder="Your Email"
               required
             ></input>
             <input
-              className="inputs my-4 p-2 w-80 md:w-full rounded-lg custom-placeholder"
+              className="inputs my-4 p-2 rounded-lg custom-placeholder w-full box-border"
               type="text"
               name="user_name"
               placeholder="Your Name"
               required
             ></input>
             <input
-              className="inputs my-4 p-2 w-80 md:w-full rounded-lg custom-placeholder"
+              className="inputs my-4 p-2 rounded-lg custom-placeholder w-full box-border"
               type="text"
               name="subject"
               placeholder="Subject"
               required
             ></input>
             <textarea
-              className="inputs my-4 mb-0 p-2 w-80 md:w-full rounded-lg custom-placeholder"
+              className="inputs my-4 mb-0 p-2 rounded-lg custom-placeholder w-full box-border"
               rows="6"
               type="text"
               name="message"

@@ -91,31 +91,35 @@ const Projects = () => {
             key={project.id}
             id={`project-${project.id}`}
             ref={(el) => (projectRefs.current[index] = el)}
-            className={`project-inside text-white m-16 text-xs px-1 pb-2 transform transition duration-700 mt-4 md:mt-16 ${
+            className={`project-inside text-white m-16 text-xs px-0 sm:px-2 pb-2 transform transition duration-700 mt-4 md:mt-16 ${
               visibleIds.includes(`project-${project.id}`)
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="project-content">
+            <div className="project-content flex flex-col justify-center items-center">
               <img
-                className="my-6 ml-12"
+                className="my-6 sm:my-6"
                 src={project.img}
                 height="200px"
                 width="200px"
               ></img>
-              <h1 className="px-4 pb-2 text-xl flex justify-center text-sky-500">
+              <h1 className="px-2 pb-2 text-xl flex justify-center text-sky-500">
                 {project.name}
               </h1>
               <ul className="list-disc px-8">
                 <li>
-                  <p className="px-4 py-2">{project.description1}</p>
+                  <p className="px-0 sm:px-4 py-1 sm:py-2 text-justify">
+                    {project.description1}
+                  </p>
                 </li>
                 <li>
-                  <p className="px-4 py-2">{project.description2}</p>
+                  <p className="px-0 sm:px-4 py-1 sm:py-2 text-justify">
+                    {project.description2}
+                  </p>
                 </li>
               </ul>
-              <div className="flex flex-wrap px-12">
+              <div className="flex flex-wrap px-8 sm:px-12">
                 {project.tech.map((tech, idx) => (
                   <p
                     key={idx}

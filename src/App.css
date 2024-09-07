@@ -5,6 +5,7 @@
 #canvas1 {
     background: #09072a;
     width: 100%;
+    height: auto;
 }
 
 .outerDiv {
@@ -102,7 +103,7 @@
     left: -10px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 500px) and (max-width: 768px) {
     .timeline {
         padding-left: 30px;
         /* To shift the timeline to the left */
@@ -137,6 +138,94 @@
 
     .timeline-item::before {
         left: 14%;
+        /* Position dots along the left edge */
+        right: auto;
+        transform: translateX(0);
+        height: 22px;
+        width: 22px;
+        /* Align dots correctly */
+    }
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+    .timeline {
+        padding-left: 30px;
+        /* To shift the timeline to the left */
+    }
+
+    .timeline::after {
+        left: 15%;
+        /* Shift the vertical line to the left */
+        margin-left: 0;
+        /* Align the line with the dots to the left side */
+    }
+
+    .timeline-item {
+        width: 60%;
+        /* Make items take full width */
+        padding: 20px 20px;
+        /* Adjust padding for smaller screens */
+    }
+
+    .timeline-item-left .timeline-content,
+    .timeline-item-right .timeline-content {
+        transform: translateX(50%);
+        /* Remove X-axis transform */
+        margin-left: -10px;
+        margin-right: 0;
+        /* Align content to the right */
+    }
+
+    .time-cont-2 {
+        left: 0;
+    }
+
+    .timeline-item::before {
+        left: 12%;
+        /* Position dots along the left edge */
+        right: auto;
+        transform: translateX(0);
+        height: 22px;
+        width: 22px;
+        /* Align dots correctly */
+    }
+}
+
+@media (max-width: 399px) {
+    .timeline {
+        padding-left: 30px;
+        /* To shift the timeline to the left */
+    }
+
+    .timeline::after {
+        left: 15%;
+        /* Shift the vertical line to the left */
+        margin-left: 0;
+        /* Align the line with the dots to the left side */
+    }
+
+    .timeline-item {
+        width: 60%;
+        /* Make items take full width */
+        padding: 20px 20px;
+        /* Adjust padding for smaller screens */
+    }
+
+    .timeline-item-left .timeline-content,
+    .timeline-item-right .timeline-content {
+        transform: translateX(50%);
+        /* Remove X-axis transform */
+        margin-left: -10px;
+        margin-right: 0;
+        /* Align content to the right */
+    }
+
+    .time-cont-2 {
+        left: 0;
+    }
+
+    .timeline-item::before {
+        left: 8%;
         /* Position dots along the left edge */
         right: auto;
         transform: translateX(0);
@@ -215,6 +304,7 @@
     width: 100%;
     /* background-color: #090731; */
     background: transparent;
+    /* box-sizing: border-box; */
     box-shadow: 2px 2px 4px 1px rgb(14 165 233);
 }
 
@@ -292,4 +382,15 @@
 .project-inside:hover .project-link {
     opacity: 0.7;
     /* Show the link overlay on hover */
+}
+
+
+@media (max-width: 450px) {
+    .project-inside {
+        height: fit-content;
+    }    
+    .project-content>img {
+        height: 100px;
+        width: 150px;
+    }
 }

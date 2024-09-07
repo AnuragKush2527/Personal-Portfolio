@@ -16,11 +16,11 @@ const Footer = () => {
       }`}
     >
       <div>
-        <p className="flex justify-center">
+        <p className="flex flex-wrap justify-center">
           &copy; 2024 <span className="text-sky-500 ml-1">Anurag Kushwaha</span>
           . All rights reserved.
         </p>
-        <ul className="flex justify-around text-xl">
+        <ul className="flex flex-wrap flex-col sm:flex-row items-center sm:justify-evenly text-xl">
           <li className="navele2 p-4 md:p-8 hover:text-sky-500">
             <a href="#aboutPage">About</a>
           </li>
