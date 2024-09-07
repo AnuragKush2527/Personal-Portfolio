@@ -55,7 +55,7 @@ const Contact = () => {
     <>
       <Heading heading="Contact" ids="contactPage" />
       <div className="flex justify-center text-white mt-[-50px] md:mt-0">
-        <div className="contact-div flex justify-center w-60 md:w-1/3">
+        <div className="contact-div flex justify-center w-80 md:w-1/3">
           <form ref={form} onSubmit={sendEmailToast} className="">
             <input
               className="inputs my-4 p-2 rounded-lg custom-placeholder w-full box-border"
