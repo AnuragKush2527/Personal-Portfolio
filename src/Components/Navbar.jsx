@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import _ from "lodash";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,35 +11,24 @@ const Navbar = () => {
       setIsLoaded(true);
     }, 100);
 
-    const handleScroll = () => {
+    const handleScroll = _.debounce(() => {
       if (window.scrollY > 0) {
         setIsScrolled(true);
         setIsVisible(true);
-        setTimeout(() => {
+        clearTimeout(window.visibilityTimeout);
+        window.visibilityTimeout = setTimeout(() => {
           setIsVisible(false);
         }, 2000);
       } else {
         setIsScrolled(false);
       }
-    };
+    }, 50);
 
     window.addEventListener("scroll", handleScroll);
 
-    let hideTimeout;
-    const handleMouseMove = () => {
-      setIsVisible(true);
-      clearTimeout(hideTimeout);
-      hideTimeout = setTimeout(() => {
-        setIsVisible(false);
-      }, 2000);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousemove", handleMouseMove);
-      clearTimeout(hideTimeout);
+      clearTimeout(window.visibilityTimeout);
     };
   }, []);
 
@@ -46,9 +36,7 @@ const Navbar = () => {
     <div
       className={`nav-bar flex flex-col md:flex-row justify-around z-20 transition-transform duration-1000 ease-out top-0 w-full ${
         isLoaded ? "transform translate-y-0" : "transform -translate-y-full"
-      } ${isScrolled ? "backdrop-blur-sm" : ""} ${
-        isVisible ? "sticky" : ""
-      }`}
+      } ${isScrolled ? "backdrop-blur-sm" : ""} ${isVisible ? "sticky" : ""}`}
     >
       <h1 className="brand pt-5 md:ml-0 md:pl-0 md:pt-10 md:pr-24 lg:pr-0 text-3xl hover:text-white flex justify-center md:flex-none">
         Portfolio
