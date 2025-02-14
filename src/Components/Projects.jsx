@@ -20,21 +20,10 @@ const Projects = () => {
         "NLTK",
         "Tensorflow",
       ],
-      link: "https://github.com/AnuragKush2527/Major-Project---VibeSync.git",
+      link: "https://github.com/AnuragKush2527/VibeSync-3.0.git",
     },
     {
       id: 2,
-      name: "Personal Portfolio",
-      img: "portfolio.jpg",
-      description1:
-        "Developed and designed a personal portfolio website to showcase professional projects, skills, and accomplishments.",
-      description2:
-        "The site features a responsive design, ensuring optimal viewing across devices.",
-      tech: ["ReactJs", "TailwindCSS", "Javascript"],
-      link: "https://github.com/AnuragKush2527/Personal-Portfolio.git",
-    },
-    {
-      id: 3,
       name: "The Noble Artist",
       img: "Thenobleartist.jpg",
       description1:
@@ -45,7 +34,7 @@ const Projects = () => {
       link: "https://github.com/AnuragKush2527/The-Noble-Artist-Business-Website.git",
     },
     {
-      id: 4,
+      id: 3,
       name: "To Do List",
       img: "todolist.jpg",
       description1:
@@ -54,6 +43,17 @@ const Projects = () => {
         "Implemented dynamic routing using Express to manage several lists at the same time.",
       tech: ["Mongodb", "NodeJs", "ExpressJs", "ReactJs", "BootStrap"],
       link: "https://github.com/AnuragKush2527/toDoList.git",
+    },
+    {
+      id: 4,
+      name: "Personal Portfolio",
+      img: "portfolio.jpg",
+      description1:
+        "Developed and designed a personal portfolio website to showcase professional projects, skills, and accomplishments.",
+      description2:
+        "The site features a responsive design, ensuring optimal viewing across devices.",
+      tech: ["ReactJs", "TailwindCSS", "Javascript"],
+      link: "https://github.com/AnuragKush2527/Personal-Portfolio.git",
     },
   ];
 
