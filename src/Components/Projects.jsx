@@ -6,11 +6,11 @@ const Projects = () => {
     {
       id: 1,
       name: "VibeSync",
-      img: "Vibesync.jpg",
+      img: "VibeSync.jpg",
       description1:
-        "Developed a full-stack social media web application featuring real-time chat functionality using ReactJs, NodeJs, SocketIO.",
+        "Achieved 83% accuracy with sentiment classification, ensuring reliable detection of positive, negative, and neutral sentiments.",
       description2:
-        "Implemented sentiment analysis in chat conversations to assess user sentiment, leveraging Natural Language Processing (NLP) libraries, TensorFlow, etc.",
+        "Integrated secure API for sentiment classification in social media platform and chat applications, enhancing automated decision-making.",
       tech: [
         "Python",
         "Flask",
@@ -24,25 +24,25 @@ const Projects = () => {
     },
     {
       id: 2,
-      name: "The Noble Artist",
-      img: "Thenobleartist.jpg",
+      name: "Credit Card Fraud Detection",
+      img: "CreditCard.jpg",
       description1:
-        "Designed and developed a visually appealing website for a small business.",
+        "Developed and fine-tuned a logistic regression-based machine learning model achieving an 92% accuracy rate in predicting credit card fraud.",
       description2:
-        "Created a user-friendly interface with a focus on clear navigation, enhancing customer engagement and user experience.",
-      tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      link: "https://github.com/AnuragKush2527/The-Noble-Artist-Business-Website.git",
+        "Successfully handled highly imbalanced datasets (e.g., 99:1 ratio of legitimate to fraudulent transactions) using advanced resampling techniques.",
+      tech: ["Python", "Scikit-Learn"],
+      link: "https://github.com/AnuragKush2527/Credit-Card-Fraud-Detection-System.git",
     },
     {
       id: 3,
-      name: "To Do List",
-      img: "todolist.jpg",
+      name: "MovieVerse",
+      img: "MovieVerse.jpg",
       description1:
-        "Developed a responsive and user-friendly to-do list application using NodeJs, ExpressJs, Mongodb. Integrated database (MongoDB) for persistent data management, ensuring tasks are saved across sessions.",
+        "Optimized algorithm performance by preprocessing user and movie datasets, reducing latency in generating personalized movie recommendations.",
       description2:
-        "Implemented dynamic routing using Express to manage several lists at the same time.",
-      tech: ["Mongodb", "NodeJs", "ExpressJs", "ReactJs", "BootStrap"],
-      link: "https://github.com/AnuragKush2527/toDoList.git",
+        "Achieved real-time recommendation delivery using asynchronous API calls and caching mechanisms to minimize server response time.",
+      tech: ["REST API", "Python", "ExpressJs", "ReactJs"],
+      link: "https://github.com/AnuragKush2527/Movieverse.git",
     },
     {
       id: 4,
