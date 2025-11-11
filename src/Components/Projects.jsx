@@ -13,10 +13,10 @@ const Projects = () => {
         "Integrated secure API for sentiment classification in social media platform and chat applications, enhancing automated decision-making.",
       tech: [
         "Python",
-        "Flask",
+        "FastAPI",
         "React",
         "Mongodb",
-        "Socket.io",
+        "JavaScript",
         "NLTK",
         "Tensorflow",
       ],
@@ -38,9 +38,9 @@ const Projects = () => {
       name: "MovieVerse",
       img: "MovieVerse.jpg",
       description1:
-        "Optimized algorithm performance by preprocessing user and movie datasets, reducing latency in generating personalized movie recommendations.",
+        "Built a full-stack movie discovery application using React.js, Node.js, and MongoDB.",
       description2:
-        "Achieved real-time recommendation delivery using asynchronous API calls and caching mechanisms to minimize server response time.",
+        "Integrated REST APIs to fetch real-time movie details and improved performance using caching and asynchronous calls.",
       tech: ["REST API", "Python", "ExpressJs", "ReactJs"],
       link: "https://github.com/AnuragKush2527/Movieverse.git",
     },
